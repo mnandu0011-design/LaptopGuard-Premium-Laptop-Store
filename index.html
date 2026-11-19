@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>LaptopGuard – Premium Certified Laptops Store</title>
+<meta content="Shop genuine certified Apple, Dell, Lenovo, HP, ASUS, Acer, MSI, and Samsung laptops with brand warranty and express delivery." name="description"/>
+<link href="https://images.unsplash.com" rel="preconnect"/>
+<style>
+:root {
+  --c-dark: #12100f;
+  --c-card: #1f1b19;
+  --c-card-hover: #292421;
+  --c-border: #3b3531;
+  --gold: #d6a75d;
+  --gold-glow: rgba(214, 167, 93, 0.35);
+  --gold-hover: #e4bc78;
+  --text-main: #f5f5f4;
+  --text-muted: #a8a29e;
+  --text-dim: #78716c;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --ease: cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--c-dark);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: inherit; text-decoration: none; cursor: pointer; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(18, 16, 15, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--c-border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 16px;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+.nav-links {
+  display: flex;
+  gap: 16px;
+  font-size: 14.5px;
+  font-weight: 500;
+  align-items: center;
+}
+.nav-links a {
+  opacity: 0.82;
+  transition: opacity 0.2s, color 0.2s;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.nav-links a:hover, .nav-links a.active {
+  opacity: 1;
+  color: var(--gold);
+  background: rgba(214, 167, 93, 0.08);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.icon-btn:hover { border-color: var(--gold); transform: translateY(-2px); }
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--gold);
+  color: #12100f;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 99px;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+}
+
+/* Page Container */
+#main-view {
+  flex: 1;
+  min-height: calc(100vh - 280px);
+}
+
+/* Hero Section (Match Screenshot 1) */
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(31, 27, 25, 0.95) 0%, rgba(20, 18, 17, 0.98) 100%);
+  border: 1px solid var(--c-border);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 48px);
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.hero-glow-orb {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content {
+  z-index: 2;
+}
+.hero-eyebrow {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.hero-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+}
+.hero-title {
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4.2vw, 52px);
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+.hero-title span {
+  color: var(--gold);
+}
+.hero-desc {
+  color: var(--text-muted);
+  font-size: clamp(14.5px, 1.2vw, 16.5px);
+  line-height: 1.6;
+  max-width: 530px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 2;
+}
+.hero-card-3d {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  aspect-ratio: 16/11;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid rgba(214, 167, 93, 0.45);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.85), 0 0 35px var(--gold-glow);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  cursor: pointer;
+}
+.hero-card-3d:hover {
+  transform: rotateY(-4deg) rotateX(2deg) scale(1.02);
+  box-shadow: 0 24px 55px rgba(0,0,0,0.9), 0 0 45px rgba(214, 167, 93, 0.45);
+}
+.hero-card-3d img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-card-tag-left {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(18, 16, 15, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(214, 167, 93, 0.4);
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+}
+.hero-card-tag-right {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(18, 16, 15, 0.82);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 99px;
+  padding: 5px 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Utility Buttons */
+.btn-gold {
+  background: var(--gold);
+  color: #12100f;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14.5px;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 4px 18px var(--gold-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-gold:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(214, 167, 93, 0.5);
+}
+.btn-ghost {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-ghost:hover { background: rgba(214, 167, 93, 0.12); transform: translateY(-2px); }
+.btn-sm-gold {
+  background: var(--gold);
+  color: #12100f;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.btn-sm-gold:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.btn-sm-ghost {
+  border: 1px solid var(--c-border);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-sm-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Section Header */
+.section-header { margin-bottom: 28px; }
+.section-title {
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+.section-title span { color: var(--gold); }
+.section-sub { color: var(--text-muted); font-size: 15px; max-width: 680px; }
+
+/* Filter & Search Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  background: var(--c-card);
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--c-border);
+  align-items: center;
+}
+.filter-bar input, .filter-bar select {
+  background: #141211;
+  border: 1px solid var(--c-border);
+  color: var(--text-main);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+}
+.filter-bar input:focus, .filter-bar select:focus { border-color: var(--gold); }
+.filter-bar input { flex: 1 1 240px; }
+
+/* Product Cards Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.product-card {
+  background: var(--c-card);
+  border-radius: 18px;
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.product-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6), 0 0 24px rgba(214, 167, 93, 0.18);
+}
+.card-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #171413;
+  cursor: pointer;
+  display: block;
+}
+.card-img-3d {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+.product-card:hover .card-img-3d { transform: scale(1.05); }
+.badge-discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: #12100f;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 3px 9px;
+  z-index: 2;
+}
+.wish-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(18,16,15,0.78);
+  backdrop-filter: blur(4px);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  z-index: 2;
+  transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.wish-toggle:hover { color: #f43f5e; transform: scale(1.1); }
+.wish-toggle.active { color: #f43f5e; background: rgba(244,63,94,0.15); border-color: #f43f5e; }
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.card-meta {
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card-rating {
+  color: #fbbf24;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+.card-title a:hover { color: var(--gold); }
+.card-specs {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+.price-current {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.price-original {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-decoration: line-through;
+}
+.stock-status {
+  font-size: 11.5px;
+  color: #4ade80;
+  margin-top: auto;
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* 8 Dedicated Visual Brands Grid */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+  margin: 28px 0 50px;
+}
+.brand-visual-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  padding: 28px 22px 24px;
+  text-align: center;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+.brand-visual-card:hover {
+  border-color: #d6a75d;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(214,167,93,0.25), 0 16px 36px rgba(0,0,0,0.6);
+  background: var(--c-card-hover);
+}
+.brand-logo-pod {
+  width: 100%;
+  min-height: 110px;
+  border-radius: 16px;
+  background: #141211;
+  border: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  padding: 18px 24px;
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+}
+.brand-visual-card:hover .brand-logo-pod {
+  border-color: rgba(214, 167, 93, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 16px rgba(214, 167, 93, 0.15);
+}
+.brand-logo-pod svg {
+  max-width: 170px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.brand-visual-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.brand-series-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.brand-count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(214, 167, 93, 0.1);
+  border: 1px solid rgba(214, 167, 93, 0.22);
+  color: var(--gold);
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.brand-action-btn {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background: rgba(214, 167, 93, 0.08);
+  border: 1px solid var(--c-border);
+  color: var(--gold);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.brand-visual-card:hover .brand-action-btn {
+  background: var(--gold);
+  color: #12100f;
+  border-color: var(--gold);
+}
+
+/* Product Details View */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  margin: 20px 0 60px;
+  background: var(--c-card);
+  padding: 36px;
+  border-radius: 24px;
+  border: 1px solid var(--c-border);
+}
+.gallery-wrap { display: flex; flex-direction: column; gap: 16px; }
+.main-img-box {
+  width: 100%;
+  aspect-ratio: 16/11;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #141211;
+  border: 1.5px solid var(--c-border);
+}
+.main-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.thumb-row { display: flex; gap: 12px; }
+.thumb-item {
+  width: 82px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: #141211;
+}
+.thumb-item.active { border-color: var(--gold); }
+.thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+.specs-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 10px 0; }
+.specs-table tr { border-bottom: 1px solid var(--c-border); }
+.specs-table td { padding: 10px 6px; }
+.specs-table td:first-child { color: var(--text-muted); width: 35%; font-weight: 500; }
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin: 20px 0 24px;
+}
+.breadcrumb a { color: var(--text-muted); }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span.current { color: var(--gold); font-weight: 500; }
+
+/* Card & Cart & Form Layouts */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 32px;
+  margin: 20px 0 60px;
+}
+.form-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  padding: 32px;
+}
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 13px; margin-bottom: 6px; color: var(--text-muted); font-weight: 500; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #141211;
+  border: 1px solid var(--c-border);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--gold);
+  color: #12100f;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 99px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s var(--ease);
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 14px;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* Footer */
+footer {
+  background: #0d0c0b;
+  border-top: 1px solid var(--c-border);
+  padding: 50px 0 25px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+.footer-grid h4 { color: var(--text-main); margin-bottom: 14px; font-size: 15px; font-weight: 600; }
+.footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-grid a:hover { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .hero-banner, .detail-layout, .cart-layout, .footer-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<nav>
+<div class="wrap nav-inner">
+<a class="logo" href="#/" onclick="navigate('#/')">◆ LaptopGuard</a>
+<div class="nav-links" id="nav-links">
+<a class="active" href="#/" id="nav-home" onclick="navigate('#/')">Home</a>
+<a href="#/laptops" id="nav-laptops" onclick="navigate('#/laptops')">Laptops</a>
+<a href="#/brands" id="nav-brands" onclick="navigate('#/brands')">Brands</a>
+<a href="#/collections" id="nav-collections" onclick="navigate('#/collections')">Collections</a>
+<a href="#/why-us" id="nav-why-us" onclick="navigate('#/why-us')">Why Us</a>
+<a href="#/about" id="nav-about" onclick="navigate('#/about')">About Us</a>
+<a href="#/contact" id="nav-contact" onclick="navigate('#/contact')">Contact</a>
+<a href="#/track" id="nav-track" onclick="navigate('#/track')">Track Order</a>
+</div>
+<div class="nav-actions">
+<button class="icon-btn" id="btn-wish" onclick="navigate('#/wishlist')" title="Wishlist">♥<span class="badge" id="badge-wish">0</span></button>
+<button class="icon-btn" id="btn-cart" onclick="navigate('#/cart')" title="Cart">🛒<span class="badge" id="badge-cart">0</span></button>
+</div>
+</div>
+</nav>
+<!-- Dynamic Main View -->
+<main class="wrap" id="main-view" style="padding-top: 24px; padding-bottom: 40px;"></main>
+<!-- Footer -->
+<footer>
+<div class="wrap footer-grid">
+<div>
+<div class="logo" style="margin-bottom:12px;">◆ LaptopGuard</div>
+<p style="font-size:13.5px; max-width:320px; margin-bottom:14px; line-height:1.5;">India's trusted destination for genuine enterprise, creator, and gaming laptops from certified manufacturers.</p>
+<p style="font-size:13px; line-height:1.6;">Direct Support: <a href="tel:+918328310650" style="color:var(--gold);">+91-8328310650</a><br/>Email: <a href="mailto:mnandu00116@gmail.com" style="color:var(--gold);">mnandu00116@gmail.com</a></p>
+</div>
+<div>
+<h4>Collections</h4>
+<ul>
+<li><a onclick="navigate('#/laptops?cat=Gaming')">Gaming Laptops</a></li>
+<li><a onclick="navigate('#/laptops?cat=Creator')">Creator &amp; Studio</a></li>
+<li><a onclick="navigate('#/laptops?cat=Business')">Business Ultrabooks</a></li>
+<li><a onclick="navigate('#/laptops?cat=Student')">Student Series</a></li>
+</ul>
+</div>
+<div>
+<h4>Brands</h4>
+<ul>
+<li><a onclick="navigate('#/laptops?b=Apple')">Apple MacBook</a></li>
+<li><a onclick="navigate('#/laptops?b=Dell')">Dell XPS &amp; Inspiron</a></li>
+<li><a onclick="navigate('#/laptops?b=HP')">HP Omen &amp; Pavilion</a></li>
+<li><a onclick="navigate('#/laptops?b=Lenovo')">Lenovo Legion &amp; ThinkPad</a></li>
+<li><a onclick="navigate('#/laptops?b=ASUS')">ASUS ROG &amp; Zenbook</a></li>
+<li><a onclick="navigate('#/laptops?b=MSI')">MSI Gaming</a></li>
+<li><a onclick="navigate('#/laptops?b=Samsung')">Samsung Galaxy Book</a></li>
+<li><a onclick="navigate('#/laptops?b=Acer')">Acer Predator</a></li>
+</ul>
+</div>
+<div>
+<h4>Customer Support</h4>
+<ul>
+<li><a onclick="navigate('#/why-us')">Why Choose Us</a></li>
+<li><a onclick="navigate('#/about')">About LaptopGuard</a></li>
+<li><a onclick="navigate('#/contact')">Contact Support</a></li>
+<li><a onclick="navigate('#/track')">Track Order Consignment</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.06); font-size:12.5px; color:var(--text-dim);">
+    © 2026 LaptopGuard. All rights reserved. Proprietary Platform managed by Maramreddy Shiva Nandheswara Reddy. Support: <a href="tel:+918328310650" style="color:var(--gold);">+91-8328310650</a> | <a href="mailto:mnandu00116@gmail.com" style="color:var(--gold);">mnandu00116@gmail.com</a>
+</div>
+</footer>
+<div class="toast" id="toast">Notification</div>
+<script>
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "MacBook Pro 16 M3 Max",
+    brand: "Apple",
+    category: "Creator & Editing",
+    price: 349900,
+    origPrice: 389900,
+    discount: "10% OFF",
+    rating: 4.9,
+    reviews: 142,
+    cpu: "Apple M3 Max (16-core CPU)",
+    gpu: "40-core GPU, Hardware Ray Tracing",
+    ram: "48 GB Unified Memory",
+    storage: "1 TB PCIe NVMe SSD",
+    display: "16.2″ Liquid Retina XDR (3456×2234), 120Hz ProMotion",
+    battery: "100Wh, up to 22 hours playback",
+    os: "macOS Sonoma",
+    weight: "2.16 kg Space Black",
+    warranty: "1 Year Official Apple Brand Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 2,
+    name: "Dell XPS 16 OLED",
+    brand: "Dell",
+    category: "Creator & Editing",
+    price: 279990,
+    origPrice: 319990,
+    discount: "13% OFF",
+    rating: 4.8,
+    reviews: 98,
+    cpu: "Intel Core Ultra 9 185H (16 Cores, up to 5.1 GHz)",
+    gpu: "NVIDIA GeForce RTX 4070 (8GB GDDR6)",
+    ram: "32 GB LPDDR5x 7467MHz",
+    storage: "1 TB M.2 Gen4 NVMe SSD",
+    display: "16.3″ 4K+ (3840×2400) OLED InfinityEdge Touch, 90Hz",
+    battery: "99.5Wh, ExpressCharge Capable",
+    os: "Windows 11 Home",
+    weight: "2.13 kg Platinum",
+    warranty: "2 Years Dell Premium On-Site Hardware Service",
+    images: [
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 3,
+    name: "Lenovo Legion Pro 7i Gen 9",
+    brand: "Lenovo",
+    category: "Gaming",
+    price: 239990,
+    origPrice: 274990,
+    discount: "13% OFF",
+    rating: 4.9,
+    reviews: 215,
+    cpu: "Intel Core i9-14900HX (24 Cores, up to 5.8 GHz)",
+    gpu: "NVIDIA GeForce RTX 4080 12GB (175W TGP)",
+    ram: "32 GB DDR5 5600MHz",
+    storage: "1 TB PCIe 4.0 TLC SSD",
+    display: "16″ WQXGA (2560×1600) IPS, 240Hz, 100% DCI-P3",
+    battery: "99.9Wh with Rapid Charge Pro",
+    os: "Windows 11 Home",
+    weight: "2.62 kg Onyx Grey",
+    warranty: "3 Years Legion Ultimate Support",
+    images: [
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 4,
+    name: "ASUS ROG Zephyrus G16 OLED",
+    brand: "ASUS",
+    category: "Gaming",
+    price: 214990,
+    origPrice: 249990,
+    discount: "14% OFF",
+    rating: 4.8,
+    reviews: 164,
+    cpu: "Intel Core Ultra 9 185H (16 Cores, AI Boost)",
+    gpu: "NVIDIA GeForce RTX 4070 8GB GDDR6 (105W)",
+    ram: "32 GB LPDDR5X 7467MHz",
+    storage: "1 TB M.2 NVMe PCIe 4.0 SSD",
+    display: "16″ 2.5K (2560×1600) ROG Nebula OLED, 240Hz",
+    battery: "90Wh, 100W Fast Power Delivery",
+    os: "Windows 11 Home",
+    weight: "1.85 kg Eclipse Gray",
+    warranty: "2 Years ASUS Global Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1544731612-de292439cc4b?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 5,
+    name: "HP Omen Transcend 14",
+    brand: "HP",
+    category: "Gaming",
+    price: 154990,
+    origPrice: 179990,
+    discount: "14% OFF",
+    rating: 4.7,
+    reviews: 82,
+    cpu: "Intel Core Ultra 7 155H (16 Cores)",
+    gpu: "NVIDIA GeForce RTX 4060 8GB GDDR6",
+    ram: "16 GB LPDDR5x 7467MHz",
+    storage: "1 TB PCIe Gen4 NVMe SSD",
+    display: "14″ 2.8K (2880×1800) OLED 120Hz, 100% DCI-P3",
+    battery: "71Wh, 140W USB-C Fast Charger",
+    os: "Windows 11 Home",
+    weight: "1.63 kg Shadow Black",
+    warranty: "1 Year Official HP On-Site Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 6,
+    name: "ThinkPad X1 Carbon Gen 12",
+    brand: "Lenovo",
+    category: "Business",
+    price: 189990,
+    origPrice: 219990,
+    discount: "14% OFF",
+    rating: 4.9,
+    reviews: 110,
+    cpu: "Intel Core Ultra 7 155U with vPro Enterprise",
+    gpu: "Intel Arc Graphics",
+    ram: "32 GB LPDDR5X 6400MHz",
+    storage: "1 TB PCIe NVMe Gen4 SSD",
+    display: "14″ 2.8K OLED (2880×1800), 120Hz, Anti-glare",
+    battery: "57Wh, Rapid Charge, Carbon Fiber Chassis",
+    os: "Windows 11 Pro 64-bit",
+    weight: "1.09 kg Deep Black",
+    warranty: "3 Years Premier Support & Accidental Protection",
+    images: [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 7,
+    name: "MSI Raider GE78 HX",
+    brand: "MSI",
+    category: "Gaming",
+    price: 299990,
+    origPrice: 349990,
+    discount: "14% OFF",
+    rating: 4.8,
+    reviews: 74,
+    cpu: "Intel Core i9-14900HX (24 Cores, 32 Threads)",
+    gpu: "NVIDIA GeForce RTX 4090 16GB GDDR6 (175W)",
+    ram: "64 GB DDR5 5600MHz",
+    storage: "2 TB NVMe PCIe Gen5 SSD",
+    display: "17″ QHD+ (2560×1600), 240Hz, 100% DCI-P3",
+    battery: "99.9Wh, SteelSeries RGB Keyboard",
+    os: "Windows 11 Home",
+    weight: "3.10 kg Core Black",
+    warranty: "2 Years MSI India Manufacturer Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1544731612-de292439cc4b?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 8,
+    name: "MacBook Air 15 M3",
+    brand: "Apple",
+    category: "Ultrabooks",
+    price: 134900,
+    origPrice: 144900,
+    discount: "7% OFF",
+    rating: 4.9,
+    reviews: 310,
+    cpu: "Apple M3 chip (8-core CPU, 10-core GPU)",
+    gpu: "10-core GPU, 16-core Neural Engine",
+    ram: "16 GB Unified Memory",
+    storage: "512 GB High-speed SSD",
+    display: "15.3″ Liquid Retina (2880×1864), 500 nits",
+    battery: "66.5Wh, Fanless Silent Design, up to 18 hrs",
+    os: "macOS Sonoma",
+    weight: "1.51 kg Starlight",
+    warranty: "1 Year Official Apple Brand Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 9,
+    name: "Samsung Galaxy Book4 Pro 360",
+    brand: "Samsung",
+    category: "Creator & Editing",
+    price: 169990,
+    origPrice: 199990,
+    discount: "15% OFF",
+    rating: 4.7,
+    reviews: 63,
+    cpu: "Intel Core Ultra 7 155H (16 Cores)",
+    gpu: "Intel Arc Graphics",
+    ram: "16 GB LPDDR5X 7467MHz",
+    storage: "1 TB NVMe SSD",
+    display: "16″ Dynamic AMOLED 2X Touch (2880×1800), S Pen Included",
+    battery: "76Wh, 65W Fast USB-C Adapter",
+    os: "Windows 11 Home",
+    weight: "1.66 kg 2-in-1 Moonstone Gray",
+    warranty: "1 Year Samsung Premium On-Site Care",
+    images: [
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 10,
+    name: "Acer Predator Helios 16",
+    brand: "Acer",
+    category: "Gaming",
+    price: 144990,
+    origPrice: 179990,
+    discount: "19% OFF",
+    rating: 4.6,
+    reviews: 154,
+    cpu: "Intel Core i7-14700HX (20 Cores, 28 Threads)",
+    gpu: "NVIDIA GeForce RTX 4070 8GB GDDR6 (140W)",
+    ram: "16 GB DDR5 5600MHz",
+    storage: "1 TB PCIe Gen4 NVMe SSD",
+    display: "16″ WQXGA (2560×1600) 240Hz, 3ms, 500 nits",
+    battery: "90Wh, AeroBlade 3D Fans Liquid Metal",
+    os: "Windows 11 Home",
+    weight: "2.60 kg Abyssal Black",
+    warranty: "2 Years Acer Authorized Warranty Support",
+    images: [
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 11,
+    name: "HP Pavilion Plus 14",
+    brand: "HP",
+    category: "Student",
+    price: 76990,
+    origPrice: 89990,
+    discount: "14% OFF",
+    rating: 4.5,
+    reviews: 190,
+    cpu: "AMD Ryzen 7 7840U (8 Cores, 16 Threads, up to 5.1 GHz)",
+    gpu: "AMD Radeon 780M Graphics",
+    ram: "16 GB LPDDR5x 6400MHz",
+    storage: "512 GB PCIe M.2 NVMe SSD",
+    display: "14″ 2.8K OLED (2880×1800), 120Hz, 100% DCI-P3",
+    battery: "68Wh, 65W Fast USB-C Charging",
+    os: "Windows 11 Home + MS Office",
+    weight: "1.38 kg Natural Silver",
+    warranty: "1 Year Official HP Manufacturer Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+  {
+    id: 12,
+    name: "ASUS Zenbook 14 OLED",
+    brand: "ASUS",
+    category: "Ultrabooks",
+    price: 99990,
+    origPrice: 119990,
+    discount: "17% OFF",
+    rating: 4.7,
+    reviews: 145,
+    cpu: "Intel Core Ultra 7 155H (16 Cores, AI Boost)",
+    gpu: "Intel Arc Graphics",
+    ram: "16 GB LPDDR5X 7467MHz",
+    storage: "1 TB M.2 NVMe PCIe 4.0 SSD",
+    display: "14″ 3K (2880×1800) Lumina OLED 120Hz, 600 nits",
+    battery: "75Wh, all-day battery up to 15 hours",
+    os: "Windows 11 Home",
+    weight: "1.20 kg Ponder Blue",
+    warranty: "1 Year ASUS Global Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1000&q=85"
+    ]
+  }
+];
+
+// 8 Dedicated Official Vector SVGs for Brand Partners
+const BRANDS_DATA = [
+  {
+    id: "Apple",
+    name: "Apple MacBook",
+    series: "MacBook Pro & Air",
+    count: 2,
+    svg: `<svg viewBox="0 0 170 170" width="56" height="56" fill="#f5f5f7">
+      <path d="M117.8 88.5c.2 21.6 19 28.8 19.2 28.9-.2.5-3 10.3-9.9 20.4-6 8.7-12.2 17.4-22 17.6-9.6.2-12.7-5.7-23.7-5.7-11 0-14.5 5.5-23.6 5.9-9.4.4-16.6-9.4-22.6-18.1-12.4-17.9-21.8-50.5-9-72.8 6.4-11.1 17.8-18.1 30.1-18.3 9.4-.2 18.3 6.3 24.1 6.3 5.7 0 16.5-7.8 27.8-6.6 4.7.2 18 1.9 26.5 14.4-.7.4-15.8 9.2-14.9 28zM104.9 33.7c4.9-5.9 8.2-14.2 7.3-22.5-7.1.3-15.6 4.7-20.7 10.7-4.5 5.2-8.4 13.6-7.4 21.6 7.9.6 16-4 20.8-9.8z"/>
+    </svg>`
+  },
+  {
+    id: "Dell",
+    name: "Dell",
+    series: "XPS & Inspiron",
+    count: 1,
+    svg: `<svg viewBox="0 0 120 120" width="62" height="62">
+      <circle cx="60" cy="60" r="54" fill="none" stroke="#007db8" stroke-width="7"/>
+      <g fill="#007db8">
+        <path d="M28 77V43h15c8.8 0 14.5 5.6 14.5 17s-5.7 17-14.5 17H28zm8.6-7.8h5.8c4.2 0 6.6-3.8 6.6-9.2s-2.4-9.2-6.6-9.2h-5.8v18.4z"/>
+        <path d="M60.5 52.8l10.8-6.2 4.4 7.6-6.4 3.7 3.4 5.9 6.2-3.6 4.3 7.5-18.7 10.8-11.5-19.9 18.7-10.8 4.3 7.5-6.2 3.6-3.4-5.9 6.4-3.7-4.4-7.6-5.1 2.9z"/>
+        <path d="M78 77V43h8.6v26.4h11.2V77H78z"/>
+        <path d="M96 77V43h8.6v26.4h11.2V77H96z"/>
+      </g>
+    </svg>`
+  },
+  {
+    id: "HP",
+    name: "HP",
+    series: "Omen & Pavilion",
+    count: 2,
+    svg: `<svg viewBox="0 0 120 120" width="64" height="64">
+      <circle cx="60" cy="60" r="54" fill="#0096d6"/>
+      <g fill="#ffffff" transform="rotate(-26 60 60)">
+        <path d="M42 22h7v76h-7z"/>
+        <path d="M57 44h7v54h-7z"/>
+        <path d="M49 61c2.5-3.5 6.5-6 12-6 8 0 14 5.5 14 14.5v28.5h-7V70c0-5-3-8.5-7.5-8.5-4 0-7.5 3-7.5 7.5v29h-7V61h3z"/>
+        <path d="M78 44h7v10c3-6.5 8.5-10.5 15-10.5 9 0 15 7 15 17s-6 17-15 17c-6.5 0-12-4-15-10.5V102h-7V44zm7 19.5c0 5.5 3.8 9.5 8.5 9.5s8.5-4 8.5-9.5-3.8-9.5-8.5-9.5-8.5 4-8.5 9.5z"/>
+      </g>
+    </svg>`
+  },
+  {
+    id: "Lenovo",
+    name: "Lenovo",
+    series: "Legion & ThinkPad",
+    count: 2,
+    svg: `<svg viewBox="0 0 180 50" width="140" height="40">
+      <rect x="0" y="2" width="180" height="46" rx="5" fill="#e2231a"/>
+      <text x="90" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="1">Lenovo</text>
+    </svg>`
+  },
+  {
+    id: "ASUS",
+    name: "ASUS",
+    series: "ROG & Zenbook",
+    count: 2,
+    svg: `<svg viewBox="0 0 180 44" width="135" height="34" fill="#00539b">
+      <!-- Official ASUS cuts in A, S, U, S -->
+      <path d="M12 40L24 4h14l12 36h-11l-2.6-8.5H19.6L17 40H12zm10-16.5h10.8l-5.4-17.5-5.4 17.5zM72 13.5l-8.5 2c-4.2 1-6.5 2.5-6.5 5 0 2.2 1.8 3.8 5.5 4.5l6.5 1.2c8.5 1.6 13 5.4 13 11.8 0 7.8-6.2 12-17 12-7.5 0-14.2-2.5-18-6.2l7-6.8c3.2 2.8 7.5 4.5 11.5 4.5 4 0 6.5-1.5 6.5-3.8 0-2.4-2-3.8-6-4.6l-6.5-1.2C44 30.5 40 26.8 40 20.8c0-7.2 6.2-11.8 16.5-11.8 6.5 0 12.2 1.8 15.5 4.5zM88 4h11v23.5c0 4.5 3 6.8 7.5 6.8s7.5-2.3 7.5-6.8V4h11v23c0 10.5-6.8 17-18.5 17S88 37.5 88 27V4zm72 9.5l-8.5 2c-4.2 1-6.5 2.5-6.5 5 0 2.2 1.8 3.8 5.5 4.5l6.5 1.2c8.5 1.6 13 5.4 13 11.8 0 7.8-6.2 12-17 12-7.5 0-14.2-2.5-18-6.2l7-6.8c3.2 2.8 7.5 4.5 11.5 4.5 4 0 6.5-1.5 6.5-3.8 0-2.4-2-3.8-6-4.6l-6.5-1.2c-8.5-1.6-12.5-5.3-12.5-11.3 0-7.2 6.2-11.8 16.5-11.8 6.5 0 12.2 1.8 15.5 4.5z" />
+      <line x1="8" y1="21.5" x2="44" y2="21.5" stroke="#141211" stroke-width="2.5" />
+      <line x1="43" y1="21.5" x2="82" y2="21.5" stroke="#141211" stroke-width="2.5" />
+      <line x1="130" y1="21.5" x2="174" y2="21.5" stroke="#141211" stroke-width="2.5" />
+    </svg>`
+  },
+  {
+    id: "Acer",
+    name: "Acer",
+    series: "Predator & Swift",
+    count: 1,
+    svg: `<svg viewBox="0 0 150 44" width="125" height="36">
+      <text x="75" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="900" text-anchor="middle" fill="#83b81a" font-style="normal" letter-spacing="-1.5">acer</text>
+    </svg>`
+  },
+  {
+    id: "MSI",
+    name: "MSI",
+    series: "Titan & Raider Gaming",
+    count: 1,
+    svg: `<svg viewBox="0 0 120 120" width="62" height="62">
+      <!-- Iconic Dragon Gaming Shield -->
+      <polygon points="60,6 108,22 108,76 60,114 12,76 12,22" fill="#141211" stroke="#e01a22" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M60 14L100 27v44c0 30-40 37-40 37s-40-7-40-37V27L60 14z" fill="#b9131a"/>
+      <!-- Stylized MSI Dragon Silhouette inside shield -->
+      <path d="M60 30c-4 5-11 7-16 6 5 4 12 5 18 3 7-2 14-8 17-15-4 1-8 3-12 4 4-5 6-11 5-17-4 5-8 11-12 19zm-14 18c3-2 8-3 13-1-6-3-13-4-19-1-5 2-8 7-9 12 3-2 6-4 10-5-3 5-4 10-3 15 3-5 5-13 8-20zm32 1c-4 3-8 8-8 14 3-2 6-4 9-7 0 4-1 9-3 13 4-4 7-9 7-15 0-3-2-5-5-5zm-22 17c-3 3-5 7-5 11 2-2 4-3 7-4-1 3-2 7-1 10 2-3 4-8 4-12 0-2-2-4-5-5z" fill="#ffffff"/>
+      <text x="60" y="103" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="2">msi</text>
+    </svg>`
+  },
+  {
+    id: "Samsung",
+    name: "Samsung",
+    series: "Galaxy Book Series",
+    count: 1,
+    svg: `<svg viewBox="0 0 180 50" width="138" height="38">
+      <ellipse cx="90" cy="25" rx="86" ry="21" fill="#1428a0" transform="rotate(-4 90 25)"/>
+      <text x="90" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="3.5">SAMSUNG</text>
+    </svg>`
+  }
+];
+
+let cart = JSON.parse(localStorage.getItem('lg_cart') || '[]');
+let wishlist = JSON.parse(localStorage.getItem('lg_wishlist') || '[]');
+
+function saveCart() {
+  localStorage.setItem('lg_cart', JSON.stringify(cart));
+  updateBadges();
+}
+function saveWishlist() {
+  localStorage.setItem('lg_wishlist', JSON.stringify(wishlist));
+  updateBadges();
+}
+function updateBadges() {
+  const bCart = document.getElementById('badge-cart');
+  const bWish = document.getElementById('badge-wish');
+  if (bCart) bCart.textContent = cart.reduce((s, c) => s + c.qty, 0);
+  if (bWish) bWish.textContent = wishlist.length;
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+function formatINR(num) {
+  return "₹" + Number(num).toLocaleString('en-IN');
+}
+
+function toggleWishlist(id) {
+  const idx = wishlist.indexOf(id);
+  if (idx > -1) { wishlist.splice(idx, 1); showToast('Removed from Wishlist'); }
+  else { wishlist.push(id); showToast('Added to Wishlist ♥'); }
+  saveWishlist();
+  document.querySelectorAll(`.wish-btn-${id}`).forEach(b => {
+    if (wishlist.includes(id)) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  if (window.location.hash.startsWith('#/wishlist')) renderWishlistView();
+}
+
+function addToCart(id) {
+  const prod = PRODUCTS.find(p => p.id === id);
+  if (!prod) return;
+  const item = cart.find(c => c.id === id);
+  if (item) item.qty += 1;
+  else cart.push({ id, qty: 1 });
+  saveCart();
+  showToast(`Added ${prod.name} to Cart 🛒`);
+}
+
+function navigate(hash) {
+  if (window.location.hash !== hash) {
+    window.location.hash = hash;
+  } else {
+    renderCurrentRoute();
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('hashchange', renderCurrentRoute);
+
+function updateActiveNav(key) {
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const el = document.getElementById(`nav-${key}`);
+  if (el) el.classList.add('active');
+}
+
+function renderProductCard(p) {
+  const isWish = wishlist.includes(p.id);
+  return `
+    <div class="product-card" id="prod-${p.id}">
+      <div class="card-image-box" onclick="navigate('#/product/${p.id}')">
+        <span class="badge-discount">${p.discount}</span>
+        <button class="wish-toggle wish-btn-${p.id} ${isWish ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${p.id})">♥</button>
+        <img class="card-img-3d" src="${p.images[0]}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80'">
+      </div>
+      <div class="card-body">
+        <div class="card-meta-row">
+          <span class="card-meta">${p.brand} • ${p.category}</span>
+          <span class="card-rating">★ ${p.rating} (${p.reviews})</span>
+        </div>
+        <h3 class="card-title"><a onclick="navigate('#/product/${p.id}')">${p.name}</a></h3>
+        <div class="card-specs">${p.cpu} • ${p.ram} • ${p.storage}</div>
+        <div class="card-price-row">
+          <span class="price-current">${formatINR(p.price)}</span>
+          <span class="price-original">${formatINR(p.origPrice)}</span>
+        </div>
+        <div class="stock-status">✓ Genuine Sealed Unit • Official Brand Warranty</div>
+        <div class="card-actions">
+          <button class="btn-sm-ghost" onclick="navigate('#/product/${p.id}')">View Details</button>
+          <button class="btn-sm-gold" onclick="addToCart(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// 1. HOME VIEW: HERO FIRST, THEN CATALOG BELOW
+function renderHomeView() {
+  updateActiveNav('home');
+  const main = document.getElementById('main-view');
+
+  main.innerHTML = `
+    <!-- EXACT HERO SECTION MATCHING FIRST SCREENSHOT (AT THE TOP) -->
+    <div class="hero-banner">
+      <div class="hero-glow-orb"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          PREMIUM CERTIFIED LAPTOPS
+        </span>
+        <h1 class="hero-title">
+          Find Your <span>Perfect</span> Laptop.
+        </h1>
+        <p class="hero-desc">
+          Discover flagship computing from Apple, Dell XPS, HP Omen, ASUS ROG, and Lenovo ThinkPad. Engineered for creators, gamers, and executives.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-gold" onclick="navigate('#/laptops')">Explore All Laptops →</button>
+          <button class="btn-ghost" onclick="navigate('#/brands')">Browse Brands</button>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-card-3d" onclick="navigate('#/product/1')">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=85" alt="Flagship Laptop - Apple MacBook Pro M3 Max" onerror="this.src='https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80'">
+          <div class="hero-card-tag-left">★ Apple M3 Max • 16-inch</div>
+          <div class="hero-card-tag-right">Hover to Rotate 3D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATALOG SECTION BELOW THE HERO (MATCHING SECOND SCREENSHOT) -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+      <div>
+        <span style="color:var(--gold); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px;">Flagship Computing Marketplace</span>
+        <h2 class="section-title">Explore Genuine <span>Laptops</span></h2>
+        <p class="section-sub">Direct authorized distributor units with manufacturer warranty, transparent pricing, and instant courier dispatch.</p>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn-gold" onclick="navigate('#/laptops')">Explore All Laptops →</button>
+        <button class="btn-ghost" onclick="navigate('#/brands')">Browse Brands</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" id="home-search" placeholder="Search by model, brand, processor, GPU (e.g. M3, RTX 4070, OLED, Dell)..." oninput="filterHome()">
+      <select id="home-sort" onchange="filterHome()">
+        <option value="featured">Featured &amp; Popular</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating">Top Customer Ratings (★)</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="home-grid">
+      ${PRODUCTS.map(p => renderProductCard(p)).join('')}
+    </div>
+  `;
+}
+
+window.filterHome = function() {
+  const q = (document.getElementById('home-search')?.value || '').toLowerCase().trim();
+  const s = document.getElementById('home-sort')?.value || 'featured';
+  let list = PRODUCTS.filter(p => p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.cpu.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+  if (s === 'price-asc') list.sort((a,b) => a.price - b.price);
+  if (s === 'price-desc') list.sort((a,b) => b.price - a.price);
+  if (s === 'rating') list.sort((a,b) => b.rating - a.rating);
+
+  const container = document.getElementById('home-grid');
+  if (container) {
+    if (list.length === 0) {
+      container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:40px; background:var(--c-card); border-radius:16px;">No laptops match your search.</div>`;
+    } else {
+      container.innerHTML = list.map(p => renderProductCard(p)).join('');
+    }
+  }
+};
+
+// 2. LAPTOPS CATALOGUE VIEW
+function renderLaptopsView() {
+  updateActiveNav('laptops');
+  const main = document.getElementById('main-view');
+
+  main.innerHTML = `
+    <div class="breadcrumb">
+      <a onclick="navigate('#/')">Home</a> <span>/</span>
+      <span class="current">Complete Laptop Catalogue</span>
+    </div>
+
+    <div class="section-header">
+      <h1 class="section-title">All Certified <span>Laptops</span></h1>
+      <p class="section-sub">Browse our verified inventory with full hardware specifications, authentic high-res photographs, and genuine manufacturer serials.</p>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" id="cat-search" placeholder="Search by model, brand, processor, GPU..." oninput="filterCatalog()">
+      <select id="cat-brand" onchange="filterCatalog()">
+        <option value="all">All Brands (Apple, Dell, HP, etc.)</option>
+        <option value="Apple">Apple MacBook</option>
+        <option value="Dell">Dell</option>
+        <option value="HP">HP</option>
+        <option value="Lenovo">Lenovo</option>
+        <option value="ASUS">ASUS</option>
+        <option value="Acer">Acer</option>
+        <option value="MSI">MSI Gaming</option>
+        <option value="Samsung">Samsung</option>
+      </select>
+      <select id="cat-category" onchange="filterCatalog()">
+        <option value="all">All Categories</option>
+        <option value="Gaming">Gaming Laptops</option>
+        <option value="Creator & Editing">Creator & Editing</option>
+        <option value="Business">Business Laptops</option>
+        <option value="Ultrabooks">Ultrabooks</option>
+        <option value="Student">Student Series</option>
+      </select>
+      <select id="cat-sort" onchange="filterCatalog()">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating">Top Rated (★)</option>
+      </select>
+    </div>
+
+    <div id="catalog-count" style="margin-bottom:18px; font-size:13.5px; color:var(--text-muted);">Showing 12 laptops</div>
+
+    <div class="product-grid" id="catalog-grid">
+      ${PRODUCTS.map(p => renderProductCard(p)).join('')}
+    </div>
+  `;
+
+  const params = new URLSearchParams(window.location.hash.split('?')[1] || '');
+  if (params.get('b')) {
+    const sel = document.getElementById('cat-brand');
+    if (sel) sel.value = params.get('b');
+  }
+  if (params.get('cat')) {
+    const sel = document.getElementById('cat-category');
+    if (sel) {
+      const v = params.get('cat');
+      if (v === 'Creator') sel.value = 'Creator & Editing';
+      else sel.value = v;
+    }
+  }
+  filterCatalog();
+}
+
+window.filterCatalog = function() {
+  const q = (document.getElementById('cat-search')?.value || '').toLowerCase().trim();
+  const b = document.getElementById('cat-brand')?.value || 'all';
+  const c = document.getElementById('cat-category')?.value || 'all';
+  const s = document.getElementById('cat-sort')?.value || 'featured';
+
+  let list = PRODUCTS.filter(p => {
+    const mQ = !q || p.name.toLowerCase().includes(q) || p.cpu.toLowerCase().includes(q) || p.storage.toLowerCase().includes(q);
+    const mB = b === 'all' || p.brand.toLowerCase() === b.toLowerCase();
+    const mC = c === 'all' || p.category.toLowerCase().includes(c.toLowerCase());
+    return mQ && mB && mC;
+  });
+
+  if (s === 'price-asc') list.sort((x,y) => x.price - y.price);
+  if (s === 'price-desc') list.sort((x,y) => y.price - x.price);
+  if (s === 'rating') list.sort((x,y) => y.rating - x.rating);
+
+  const counter = document.getElementById('catalog-count');
+  if (counter) counter.textContent = `Showing ${list.length} of ${PRODUCTS.length} laptops`;
+
+  const container = document.getElementById('catalog-grid');
+  if (container) {
+    if (list.length === 0) {
+      container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px 20px; background:var(--c-card); border-radius:18px;"><p style="font-size:16px; color:var(--text-muted);">No laptops found for the selected criteria.</p></div>`;
+    } else {
+      container.innerHTML = list.map(p => renderProductCard(p)).join('');
+    }
+  }
+};
+
+// 3. BRANDS VIEW: 8 DEDICATED VISUAL BRAND LOGO CARDS
+function renderBrandsView() {
+  updateActiveNav('brands');
+  const main = document.getElementById('main-view');
+
+  main.innerHTML = `
+    <div class="breadcrumb">
+      <a onclick="navigate('#/')">Home</a> <span>/</span>
+      <span class="current">Authorized Brands</span>
+    </div>
+
+    <div class="section-header">
+      <h1 class="section-title">Official Brand <span>Partners</span></h1>
+      <p class="section-sub">Select your preferred manufacturer to explore their authenticated product lineup, verified technical specifications, and authorized on-site warranty coverage.</p>
+    </div>
+
+    <div class="brands-grid" id="brands-grid">
+      ${BRANDS_DATA.map(b => `
+        <div class="brand-visual-card" onclick="navigate('#/laptops?b=${encodeURIComponent(b.id)}')">
+          <div class="brand-logo-pod">
+            ${b.svg}
+          </div>
+          <h3>${b.name}</h3>
+          <p class="brand-series-text">${b.series}</p>
+          <span class="brand-count-pill">
+            <span>●</span> ${b.count} Flagship Model${b.count > 1 ? 's' : ''}
+          </span>
+          <button class="brand-action-btn">
+            View Laptops →
+          </button>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="background:var(--c-card); padding:32px; border-radius:20px; border:1px solid var(--c-border); text-align:center;">
+      <h3 style="font-size:20px; margin-bottom:8px; color:var(--gold);">Looking for the complete inventory?</h3>
+      <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">Compare technical benchmarks and performance across all 8 certified brands simultaneously.</p>
+      <button class="btn-gold" onclick="navigate('#/laptops')">Explore All Laptops →</button>
+    </div>
+  `;
+}
+
+// 4. PRODUCT DETAILS VIEW
+function renderProductDetailView(id) {
+  const prod = PRODUCTS.find(p => p.id === Number(id));
+  const main = document.getElementById('main-view');
+
+  if (!prod) {
+    main.innerHTML = `<div style="text-align:center; padding:60px;"><h2>Product Not Found</h2><button class="btn-gold" style="margin-top:16px;" onclick="navigate('#/laptops')">Back to Laptops</button></div>`;
+    return;
+  }
+
+  const isWish = wishlist.includes(prod.id);
+
+  main.innerHTML = `
+    <div class="breadcrumb">
+      <a onclick="navigate('#/')">Home</a> <span>/</span>
+      <a onclick="navigate('#/laptops')">Laptops</a> <span>/</span>
+      <a onclick="navigate('#/laptops?b=${encodeURIComponent(prod.brand)}')">${prod.brand}</a> <span>/</span>
+      <span class="current">${prod.name}</span>
+    </div>
+
+    <div class="detail-layout">
+      <div class="gallery-wrap">
+        <div class="main-img-box">
+          <img id="detail-active-img" src="${prod.images[0]}" alt="${prod.name}" onerror="this.src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div class="thumb-row">
+          ${prod.images.map((img, idx) => `
+            <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="setThumb(this, '${img}')">
+              <img src="${img}" alt="Thumbnail ${idx + 1}" loading="lazy">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div>
+        <span style="color:var(--gold); font-size:12.5px; font-weight:700; text-transform:uppercase;">${prod.brand} • ${prod.category}</span>
+        <h1 style="font-family:Georgia,serif; font-size:30px; margin:6px 0 10px;">${prod.name}</h1>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px; font-size:13.5px;">
+          <span style="color:#fbbf24; font-weight:700;">★ ${prod.rating}</span>
+          <span style="color:var(--text-muted);">(${prod.reviews} Customer Reviews)</span>
+          <span style="color:#4ade80;">✓ In Stock</span>
+        </div>
+
+        <div style="display:flex; align-items:baseline; gap:14px; padding:14px 18px; background:#141211; border-radius:14px; border:1px solid var(--c-border); margin-bottom:20px;">
+          <span style="font-size:28px; font-weight:800; color:var(--gold);">${formatINR(prod.price)}</span>
+          <span style="font-size:15px; color:var(--text-dim); text-decoration:line-through;">${formatINR(prod.origPrice)}</span>
+          <span class="badge-discount" style="position:static;">${prod.discount} SAVINGS</span>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px;">
+          <button class="btn-gold" style="flex:1 1 180px;" onclick="addToCart(${prod.id})">Add to Shopping Cart 🛒</button>
+          <button class="btn-ghost" style="flex:1 1 140px;" onclick="addToCart(${prod.id}); navigate('#/checkout')">Buy Now ⚡</button>
+          <button class="wish-toggle wish-btn-${prod.id} ${isWish ? 'active' : ''}" style="position:static; width:48px; height:48px;" onclick="toggleWishlist(${prod.id})">♥</button>
+        </div>
+
+        <h3 style="font-size:16px; border-bottom:1px solid var(--c-border); padding-bottom:8px; margin-bottom:12px;">Hardware Specifications</h3>
+        <table class="specs-table">
+          <tr><td>Processor (CPU)</td><td>${prod.cpu}</td></tr>
+          <tr><td>Graphics (GPU)</td><td>${prod.gpu}</td></tr>
+          <tr><td>System RAM</td><td>${prod.ram}</td></tr>
+          <tr><td>Internal Storage</td><td>${prod.storage}</td></tr>
+          <tr><td>Display Panel</td><td>${prod.display}</td></tr>
+          <tr><td>Operating System</td><td>${prod.os}</td></tr>
+          <tr><td>Battery & Power</td><td>${prod.battery}</td></tr>
+          <tr><td>Chassis Weight</td><td>${prod.weight}</td></tr>
+          <tr><td>Warranty Support</td><td style="color:var(--gold);">${prod.warranty}</td></tr>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+window.setThumb = function(el, src) {
+  document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const img = document.getElementById('detail-active-img');
+  if (img) img.src = src;
+};
+
+// 5. ABOUT US VIEW
+function renderAboutView() {
+  updateActiveNav('about');
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">About LaptopGuard</span></div>
+    <div class="form-card">
+      <h2 style="font-family:Georgia,serif; font-size:24px; color:var(--gold); margin-bottom:14px;">Company Information & Ownership</h2>
+      <p style="color:var(--text-muted); line-height:1.7; margin-bottom:16px;">
+        LaptopGuard is an independent online laptop-selling platform owned and managed by <strong>MARAMREDDY SHIVA NANDHESWARA REDDY</strong>. 
+        The platform was built with a transparent focus: to help customers explore, compare, and purchase authenticated laptops directly from globally recognized technology manufacturers.
+      </p>
+      <h3 style="font-size:18px; margin:20px 0 10px;">Available Brands</h3>
+      <p style="color:var(--text-muted); line-height:1.7; margin-bottom:16px;">
+        Apple MacBook, Dell XPS, HP Omen, Lenovo Legion, ASUS ROG, Acer Predator, MSI Gaming, and Samsung Galaxy Book.
+      </p>
+      <h3 style="font-size:18px; margin:20px 0 10px;">Authenticity & Warranty Guarantee</h3>
+      <p style="color:var(--text-muted); line-height:1.7; margin-bottom:16px;">
+        Every single laptop purchased through LaptopGuard is shipped in its factory-sealed original manufacturer box with verified serial numbers and official brand warranty valid across India.
+      </p>
+      <p style="color:var(--text-muted); line-height:1.7;">
+        Direct Contact: <a href="mailto:mnandu00116@gmail.com" style="color:var(--gold);">mnandu00116@gmail.com</a> | <a href="tel:+918328310650" style="color:var(--gold);">+91-8328310650</a>
+      </p>
+    </div>
+  `;
+}
+
+// 6. WHY CHOOSE US VIEW
+function renderWhyUsView() {
+  updateActiveNav('why-us');
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Why Choose Us</span></div>
+    <div class="section-header">
+      <h1 class="section-title">Why Customers Choose <span>LaptopGuard</span></h1>
+      <p class="section-sub">We eliminate uncertainty in laptop procurement through verified authenticity, official warranties, and dedicated customer support.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin:28px 0;">
+      <div style="background:var(--c-card); padding:26px; border-radius:18px; border:1px solid var(--c-border);">
+        <div style="font-size:36px; margin-bottom:12px;">🛡️</div>
+        <h3 style="font-size:18px; margin-bottom:8px;">100% Genuine Sealed Units</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">Direct supply relationships ensuring every machine carries authentic factory seals and verified serials.</p>
+      </div>
+      <div style="background:var(--c-card); padding:26px; border-radius:18px; border:1px solid var(--c-border);">
+        <div style="font-size:36px; margin-bottom:12px;">🔧</div>
+        <h3 style="font-size:18px; margin-bottom:8px;">Official Brand Warranty</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">Full manufacturer on-site and service center warranty coverage with legitimate GST tax invoices.</p>
+      </div>
+      <div style="background:var(--c-card); padding:26px; border-radius:18px; border:1px solid var(--c-border);">
+        <div style="font-size:36px; margin-bottom:12px;">🚚</div>
+        <h3 style="font-size:18px; margin-bottom:8px;">Secure Insured Transit</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">Complimentary priority air express delivery with real-time door-to-door tracking for complete consignment peace of mind.</p>
+      </div>
+      <div style="background:var(--c-card); padding:26px; border-radius:18px; border:1px solid var(--c-border);">
+        <div style="font-size:36px; margin-bottom:12px;">🔒</div>
+        <h3 style="font-size:18px; margin-bottom:8px;">Secure Shopping & Payments</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">256-bit encrypted checkout handling UPI, Net Banking, and Major Credit Cards with zero hidden fees.</p>
+      </div>
+    </div>
+  `;
+}
+
+// 7. CONTACT US VIEW
+function renderContactView() {
+  updateActiveNav('contact');
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Contact Us</span></div>
+    <div style="display:grid; grid-template-columns:1.1fr 1.3fr; gap:36px;">
+      <div class="form-card">
+        <h3 style="font-family:Georgia,serif; font-size:22px; color:var(--gold); margin-bottom:16px;">Direct Assistance</h3>
+        <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">Contact our certified specialists for specifications and order inquiries.</p>
+        <p style="margin-bottom:12px;"><strong>Email:</strong> <a href="mailto:mnandu00116@gmail.com" style="color:var(--gold);">mnandu00116@gmail.com</a></p>
+        <p style="margin-bottom:12px;"><strong>Phone:</strong> <a href="tel:+918328310650" style="color:var(--gold);">+91-8328310650</a></p>
+        <p style="margin-bottom:12px;"><strong>Hours:</strong> Mon – Sat: 9:00 AM – 8:00 PM IST</p>
+        <p><strong>Managing Director:</strong> Maramreddy Shiva Nandheswara Reddy</p>
+      </div>
+      <div class="form-card">
+        <h3 style="font-family:Georgia,serif; font-size:22px; color:var(--gold); margin-bottom:16px;">Send Message</h3>
+        <form onsubmit="event.preventDefault(); window.location.href='mailto:mnandu00116@gmail.com?subject=LaptopGuard Inquiry&body=' + encodeURIComponent(document.getElementById('msg-text').value);">
+          <div class="form-group"><label>Full Name *</label><input type="text" required placeholder="Your Name"></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" required placeholder="name@domain.com"></div>
+          <div class="form-group"><label>Message *</label><textarea id="msg-text" rows="4" required placeholder="How can we assist you?"></textarea></div>
+          <button type="submit" class="btn-gold" style="width:100%; justify-content:center;">Send Message to LaptopGuard</button>
+        </form>
+      </div>
+    </div>
+  `;
+}
+
+// 8. WISHLIST VIEW
+function renderWishlistView() {
+  updateActiveNav('wish');
+  const wishProducts = PRODUCTS.filter(p => wishlist.includes(p.id));
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Wishlist</span></div>
+    <div class="section-header">
+      <h1 class="section-title">Saved <span>Wishlist</span> (${wishProducts.length})</h1>
+    </div>
+    ${wishProducts.length === 0 ? `
+      <div style="background:var(--c-card); padding:50px; text-align:center; border-radius:18px;">Your wishlist is currently empty. <button class="btn-gold" style="margin-top:16px;" onclick="navigate('#/laptops')">Browse Laptops</button></div>
+    ` : `
+      <div class="product-grid">${wishProducts.map(p => renderProductCard(p)).join('')}</div>
+    `}
+  `;
+}
+
+// 9. CART VIEW
+function renderCartView() {
+  updateActiveNav('cart');
+  const items = cart.map(c => {
+    const prod = PRODUCTS.find(p => p.id === c.id);
+    return { ...prod, qty: c.qty };
+  }).filter(p => p.id);
+
+  const subtotal = items.reduce((s, i) => s + (i.price * i.qty), 0);
+
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Shopping Cart</span></div>
+    <div class="section-header">
+      <h1 class="section-title">Shopping <span>Cart</span></h1>
+    </div>
+    ${items.length === 0 ? `
+      <div style="background:var(--c-card); padding:50px; text-align:center; border-radius:18px;">Your cart is empty. <button class="btn-gold" style="margin-top:16px;" onclick="navigate('#/laptops')">Start Shopping</button></div>
+    ` : `
+      <div class="cart-layout">
+        <div class="form-card">
+          ${items.map(i => `
+            <div style="display:flex; gap:16px; align-items:center; padding:16px 0; border-bottom:1px solid var(--c-border);">
+              <img src="${i.images[0]}" style="width:80px; height:60px; object-fit:cover; border-radius:8px;">
+              <div style="flex:1;">
+                <h4 style="font-size:16px;">${i.name}</h4>
+                <div style="color:var(--gold); font-weight:700;">${formatINR(i.price)} × ${i.qty}</div>
+              </div>
+              <button onclick="cart = cart.filter(c => c.id !== ${i.id}); saveCart(); renderCartView();" style="color:var(--danger); font-size:13px;">Remove</button>
+            </div>
+          `).join('')}
+        </div>
+        <div class="form-card" style="height:fit-content;">
+          <h3 style="font-size:18px; margin-bottom:12px;">Order Summary</h3>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>Subtotal</span><span>${formatINR(subtotal)}</span></div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:16px; color:#4ade80;"><span>Delivery</span><span>FREE</span></div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-weight:700; font-size:18px; border-top:1px solid var(--c-border); padding-top:12px;"><span>Total</span><span style="color:var(--gold);">${formatINR(subtotal)}</span></div>
+          <button class="btn-gold" style="width:100%; justify-content:center;" onclick="navigate('#/checkout')">Proceed to Checkout →</button>
+        </div>
+      </div>
+    `}
+  `;
+}
+
+// 10. CHECKOUT VIEW
+function renderCheckoutView() {
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Checkout</span></div>
+    <div class="form-card" style="max-width:680px; margin:0 auto;">
+      <h2 style="font-family:Georgia,serif; font-size:24px; color:var(--gold); margin-bottom:16px;">Order Checkout</h2>
+      <form onsubmit="event.preventDefault(); showToast('Order submitted successfully! Consignment dispatched.'); setTimeout(()=>navigate('#/track'), 1200);">
+        <div class="form-group"><label>Full Delivery Name *</label><input type="text" required placeholder="Full Name"></div>
+        <div class="form-group"><label>10-Digit Mobile Number *</label><input type="tel" required placeholder="+91-8328310650"></div>
+        <div class="form-group"><label>Full Street Address *</label><input type="text" required placeholder="Street address, city, state, pin"></div>
+        <div class="form-group"><label>Payment Method *</label>
+          <select style="width:100%; padding:12px; background:#141211; border:1px solid var(--c-border); color:#fff; border-radius:10px;">
+            <option>Instant UPI / QR Code Payment</option>
+            <option>Credit / Debit Card (Visa, MasterCard)</option>
+            <option>Net Banking (HDFC, ICICI, SBI, Axis)</option>
+            <option>Cash on Delivery</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%; justify-content:center; margin-top:10px;">Confirm & Place Order</button>
+      </form>
+    </div>
+  `;
+}
+
+// 11. TRACK VIEW
+function renderTrackView() {
+  updateActiveNav('track');
+  document.getElementById('main-view').innerHTML = `
+    <div class="breadcrumb"><a onclick="navigate('#/')">Home</a> <span>/</span> <span class="current">Track Order</span></div>
+    <div class="form-card" style="max-width:600px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:Georgia,serif; font-size:22px; color:var(--gold); margin-bottom:12px;">Track Your Laptop Consignment</h2>
+      <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">Enter your 10-digit mobile number or 8-digit order reference to check real-time courier transit status.</p>
+      <input type="text" placeholder="e.g. LG-839201" style="width:100%; padding:12px; background:#141211; border:1px solid var(--c-border); color:#fff; border-radius:10px; margin-bottom:14px;">
+      <button class="btn-gold" onclick="showToast('Consignment #LG-839201 is in Express Air Transit with Blue Dart');">Check Status</button>
+    </div>
+  `;
+}
+
+// Master Router
+function renderCurrentRoute() {
+  const hash = window.location.hash || '#/';
+  if (hash === '#/' || hash === '#' || hash === '') {
+    renderHomeView();
+  } else if (hash.startsWith('#/laptops')) {
+    renderLaptopsView();
+  } else if (hash.startsWith('#/brands')) {
+    renderBrandsView();
+  } else if (hash.startsWith('#/collections')) {
+    renderLaptopsView();
+  } else if (hash.startsWith('#/product/')) {
+    const id = hash.replace('#/product/', '').split('?')[0];
+    renderProductDetailView(id);
+  } else if (hash.startsWith('#/about')) {
+    renderAboutView();
+  } else if (hash.startsWith('#/why-us')) {
+    renderWhyUsView();
+  } else if (hash.startsWith('#/contact')) {
+    renderContactView();
+  } else if (hash.startsWith('#/wishlist')) {
+    renderWishlistView();
+  } else if (hash.startsWith('#/cart')) {
+    renderCartView();
+  } else if (hash.startsWith('#/checkout')) {
+    renderCheckoutView();
+  } else if (hash.startsWith('#/auth')) {
+    renderCheckoutView();
+  } else if (hash.startsWith('#/track')) {
+    renderTrackView();
+  } else {
+    renderHomeView();
+  }
+  updateBadges();
+}
+
+// Initial Boot
+window.addEventListener('DOMContentLoaded', () => {
+  renderCurrentRoute();
+});
+renderCurrentRoute();
+</script>
+</body></html>
