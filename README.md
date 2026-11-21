@@ -1,4 +1,4 @@
-# 💻 LaptopGuard – Premium Laptop Store
+# 💻 LaptopGuard – Premium Laptop Store.
 
 **LaptopGuard** is a premium laptop shopping website designed to help customers explore and discover laptops from popular technology brands. It provides a modern shopping interface with a professional black-and-gold theme.
 
